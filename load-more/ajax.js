@@ -77,7 +77,7 @@
      isLoading = true;//产生AJAX前立刻上锁，防止用户多次点击
         $('#loadMore').html('<span>请稍等</span><i class="loading"></i>') ;
         $.ajax({
-        url:'/getMore',
+        url:'load-more.php',
         type:'get',
         data:{
             start :cur,
