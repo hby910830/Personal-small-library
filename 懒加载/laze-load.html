@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片懒加载</title>
+</head>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	ul,li {
+		list-style: none;
+	}
+	.container {
+		width: 1320px;
+		margin: 0 auto;
+	}
+	.container li {
+		float: left;
+		margin: 10px 10px;
+	}
+	.container li img {
+		width: 310px;
+		height: 206px;
+	}
+</style>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<body>
+	<ul class="container" style="overflow: hidden">
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/1.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/2.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/3.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+		<li><img src="http://www.atool.org/placeholder.png?size=310x207&text=lazy-more&&bg=fff&fg=000" data-src="imgs/4.jpg"></li>
+	</ul>
+</body>
+</html>
